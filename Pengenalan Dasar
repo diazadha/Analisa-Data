@@ -1,0 +1,36 @@
+x<-10
+x
+x=10
+x
+#beberapa tipe objek
+#vektor
+x<-c(1,3,4)
+x
+x<-1:20
+x
+diaz<-2:20
+diaz
+x<-seq(from=1, to=100,by=5)
+x
+#operasi perkalian dengan skalar
+2*x #perkalian skalar vektor
+#penjumlahan skalar dengan vektor
+2+x
+#logaritma
+log(10)
+log(10) #Logaritma natural
+log(10)ln
+log(10)(ln)
+#perkalian antar vektor
+x*x
+x%*%x
+%x*x%
+length(x)
+max(x)
+which.max(x)
+min(x)
+which.min(x)
+mean(x)
+var(x)
+sd(x)
+range(x)

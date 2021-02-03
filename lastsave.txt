@@ -1,0 +1,351 @@
+
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #kalkulator
+> 5+3-4
+[1] 4
+> 5*3/2
+[1] 7.5
+> exp(3)
+[1] 20.08554
+> log(10)
+[1] 2.302585
+> log(10)#logaritma natural (ln)
+[1] 2.302585
+> log10(10)#logaritma biasa
+[1] 1
+> cos(0)
+[1] 1
+> cos(pi/3)# cos 60
+[1] 0.5
+> #membuat objek
+> x<-5
+> x
+[1] 5
+> 5->x
+> x
+[1] 5
+> # beberapa tipe objek
+> # vektor
+> x<-c(1,3,4)
+> x
+[1] 1 3 4
+> x<-1:20
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+> x<-seq(from=1,to=100,by=5)
+> x
+ [1]  1  6 11 16 21 26 31 36 41 46 51 56 61 66 71 76 81 86 91 96
+> x=5
+> x=1:20
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+> x=c(1,3,4)
+> x
+[1] 1 3 4
+> x<-seq(from=1,to=100,by=5)
+> x
+ [1]  1  6 11 16 21 26 31 36 41 46 51 56 61 66 71 76 81 86 91 96
+> #operasi pada vektor
+> 2*x #perkalian skalar dengan vektor
+ [1]   2  12  22  32  42  52  62  72  82  92 102 112 122 132 142 152 162 172 182 192
+> #penjumlahan skalar dengan vektor
+> 2+x
+ [1]  3  8 13 18 23 28 33 38 43 48 53 58 63 68 73 78 83 88 93 98
+> #perkalian antar vektor
+> x*x
+ [1]    1   36  121  256  441  676  961 1296 1681 2116 2601 3136 3721 4356 5041 5776 6561 7396
+[19] 8281 9216
+> x%*%x
+      [,1]
+[1,] 63670
+> x%*x%
++ x%*x%)
+Error: unexpected ')' in:
+"x%*x%
+x%*x%)"
+> length(x)
+[1] 20
+> max(x)
+[1] 96
+> which.max(x)
+[1] 20
+> min(x)
+[1] 1
+> which.min(x)
+[1] 1
+> mean(x)
+[1] 48.5
+> median(x)
+[1] 48.5
+> var(x)
+[1] 875
+> sd(x)
+[1] 29.5804
+> range(X)
+Error: object 'X' not found
+> range(x)
+[1]  1 96
+> #tipe objek matriks
+> A<-matrix(c(3,7,2,6,5,1),nrow=2)
+> A
+     [,1] [,2] [,3]
+[1,]    3    2    5
+[2,]    7    6    1
+> 2*A
+     [,1] [,2] [,3]
+[1,]    6    4   10
+[2,]   14   12    2
+> 2+A
+     [,1] [,2] [,3]
+[1,]    5    4    7
+[2,]    9    8    3
+> B<-matrix(c(1,4,2,7,8,3),3)
+> B
+     [,1] [,2]
+[1,]    1    7
+[2,]    4    8
+[3,]    2    3
+> A%*%B
+     [,1] [,2]
+[1,]   21   52
+[2,]   33  100
+> det(A%*%B)
+[1] 384
+> solve(A%*%B) #invers matriks
+           [,1]       [,2]
+[1,]  0.2604167 -0.1354167
+[2,] -0.0859375  0.0546875
+> t(A
++ 
++ )
+     [,1] [,2]
+[1,]    3    7
+[2,]    2    6
+[3,]    5    1
+> diag(A%*%B
++ )
+[1]  21 100
+> dim(A%*%B
++ )
+[1] 2 2
+> membuat data frame
+Error: unexpected symbol in "membuat data"
+> #membuat data frame
+> dat<-data.frame(ID=c(1,2,3,4),sex=c("lk","pr","lk","lk"),angkatan=c("2018","2016","2017","2014"))
+> dat
+  ID sex angkatan
+1  1  lk     2018
+2  2  pr     2016
+3  3  lk     2017
+4  4  lk     2014
+> dat2<-data.frame(ID=5:20,sex=rep(c("lk","pr"),times=8),angkatan=rep(c("2018","2016","2017","2014"),times=4))
+> dat2
+   ID sex angkatan
+1   5  lk     2018
+2   6  pr     2016
+3   7  lk     2017
+4   8  pr     2014
+5   9  lk     2018
+6  10  pr     2016
+7  11  lk     2017
+8  12  pr     2014
+9  13  lk     2018
+10 14  pr     2016
+11 15  lk     2017
+12 16  pr     2014
+13 17  lk     2018
+14 18  pr     2016
+15 19  lk     2017
+16 20  pr     2014
+> fix(dat2)
+> dat2
+   ID sex angkatan
+1   6  lk     2018
+2   6  pr     2016
+3   7  lk     2017
+4   8  pr     2014
+5   9  lk     2018
+6  10  pr     2016
+7  11  lk     2017
+8  12  pr     2014
+9  13  lk     2018
+10 14  pr     2016
+11 15  lk     2017
+12 16  pr     2014
+13 17  lk     2018
+14 18  pr     2016
+15 19  lk     2017
+16 20  pr     2014
+17 21  lk     2014
+> 
+> dat3<-data.frame(NULL)
+> fix(dat3)
+> fix(dat3)
+> gabung<-rbind(dat,dat2)
+> gabung
+   ID sex angkatan
+1   1  lk     2018
+2   2  pr     2016
+3   3  lk     2017
+4   4  lk     2014
+5   6  lk     2018
+6   6  pr     2016
+7   7  lk     2017
+8   8  pr     2014
+9   9  lk     2018
+10 10  pr     2016
+11 11  lk     2017
+12 12  pr     2014
+13 13  lk     2018
+14 14  pr     2016
+15 15  lk     2017
+16 16  pr     2014
+17 17  lk     2018
+18 18  pr     2016
+19 19  lk     2017
+20 20  pr     2014
+21 21  lk     2014
+> #menselect data
+> gabung[c(1,2,3),]#menampilkan hanya case/ baris 1,2,3
+  ID sex angkatan
+1  1  lk     2018
+2  2  pr     2016
+3  3  lk     2017
+> gabung[-12,]#menampilkan tanpa case/ baris ke-12
+   ID sex angkatan
+1   1  lk     2018
+2   2  pr     2016
+3   3  lk     2017
+4   4  lk     2014
+5   6  lk     2018
+6   6  pr     2016
+7   7  lk     2017
+8   8  pr     2014
+9   9  lk     2018
+10 10  pr     2016
+11 11  lk     2017
+13 13  lk     2018
+14 14  pr     2016
+15 15  lk     2017
+16 16  pr     2014
+17 17  lk     2018
+18 18  pr     2016
+19 19  lk     2017
+20 20  pr     2014
+21 21  lk     2014
+> gabung<-gabung[-12,]
+> gabung
+   ID sex angkatan
+1   1  lk     2018
+2   2  pr     2016
+3   3  lk     2017
+4   4  lk     2014
+5   6  lk     2018
+6   6  pr     2016
+7   7  lk     2017
+8   8  pr     2014
+9   9  lk     2018
+10 10  pr     2016
+11 11  lk     2017
+13 13  lk     2018
+14 14  pr     2016
+15 15  lk     2017
+16 16  pr     2014
+17 17  lk     2018
+18 18  pr     2016
+19 19  lk     2017
+20 20  pr     2014
+21 21  lk     2014
+> gabung[,-3]
+   ID sex
+1   1  lk
+2   2  pr
+3   3  lk
+4   4  lk
+5   6  lk
+6   6  pr
+7   7  lk
+8   8  pr
+9   9  lk
+10 10  pr
+11 11  lk
+13 13  lk
+14 14  pr
+15 15  lk
+16 16  pr
+17 17  lk
+18 18  pr
+19 19  lk
+20 20  pr
+21 21  lk
+> #memfilter dari data frame
+> gabung[gabung$sex=="lk,]
++ gabung[gabung$sex=="lk",]
+Error: unexpected symbol in:
+"gabung[gabung$sex=="lk,]
+gabung[gabung$sex=="lk"
+> gabung[gabung$sex=="lk",]
+   ID sex angkatan
+1   1  lk     2018
+3   3  lk     2017
+4   4  lk     2014
+5   6  lk     2018
+7   7  lk     2017
+9   9  lk     2018
+11 11  lk     2017
+13 13  lk     2018
+15 15  lk     2017
+17 17  lk     2018
+19 19  lk     2017
+21 21  lk     2014
+> gabung[gabung$sex=="lk"&gabung$angkatan=="2018",]
+   ID sex angkatan
+1   1  lk     2018
+5   6  lk     2018
+9   9  lk     2018
+13 13  lk     2018
+17 17  lk     2018
+> gabung[gabung$sex=="lk",-3]
+   ID sex
+1   1  lk
+3   3  lk
+4   4  lk
+5   6  lk
+7   7  lk
+9   9  lk
+11 11  lk
+13 13  lk
+15 15  lk
+17 17  lk
+19 19  lk
+21 21  lk
+> 
+> #menampilkan objek yang sudah dibuat
+> ls()
+[1] "A"      "B"      "dat"    "dat2"   "dat3"   "gabung" "x"     
+> rm(A)
+> A
+Error: object 'A' not found
+> B
+     [,1] [,2]
+[1,]    1    7
+[2,]    4    8
+[3,]    2    3
+> 
